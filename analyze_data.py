@@ -18,7 +18,13 @@ def explore_dataset(root_dir):
         # Look at the first CSV file to understand structure
         if files:
             first_file_path = os.path.join(dir_path, files[0])
-            df = pd.read_csv(first_file_path)
+            print(f"Reading file: {first_file_path}")
+            
+            # Read without header inference
+            df = pd.read_csv(first_file_path, header=None)
+            # Assign column names manually
+            df.columns = ['Col1', 'Col2', 'Col3', 'Col4', 'Col5']
+            
             print(f"Sample file: {files[0]}")
             print(f"Shape: {df.shape}")
             print(f"Columns: {df.columns.tolist()}")
@@ -236,7 +242,7 @@ dataset_path = "eel4810-dataset"
 # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 
 # Replace with your dataset directory path
-## explore_dataset(dataset_path)
+explore_dataset(dataset_path)
 
 # Replace with your dataset directory path
 ## check_missing_values(dataset_path)
