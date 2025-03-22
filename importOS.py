@@ -183,7 +183,57 @@ def find_files_with_hash(dataset_path):
         print("No files contain '#' in the label column.")
 
 
+# Function to verify dataset integrity
+def verify_dataset_integrity(dataset_path):
+    label_issues = []
+
+    for root, _, files in os.walk(dataset_path):
+        for file in files:
+            if file.endswith('.csv'):
+                file_path = os.path.join(root, file)
+                try:
+                    df = pd.read_csv(file_path)
+                    # Check if the label column (5th column) contains only one unique value
+                    unique_labels = df.iloc[:, 4].unique()
+                    if len(unique_labels) == 1:
+                        label_issues.append((file, unique_labels))
+                except Exception as e:
+                    print(f"Error reading file {file}: {e}")
+
+    return label_issues
+
+
+
+# Function to check encoding issues
+def check_encoding_issues(dataset_path):
+    encoding_issues = []
+
+    for root, _, files in os.walk(dataset_path):
+        for file in files:
+            if file.endswith('.csv'):
+                file_path = os.path.join(root, file)
+                try:
+                    # Attempt to open the file with UTF-8 encoding
+                    with open(file_path, 'r', encoding='utf-8') as f:
+                        f.read()
+                except UnicodeDecodeError:
+                    encoding_issues.append(file)
+
+    return encoding_issues
+
+
+
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # 
+# # # # # # # # # DEFINE DATASET PATH # # # # # # # # #
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # 
+
 dataset_path = "eel4810-dataset"
+
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # 
+# # # # # # # FUNCTIONS FOR DATA ANALYSIS # # # # # # #
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # 
+# # # UNCOMMENT THE FUNCTION CALLS AS NEEDED  # # # # # 
+# # # # # # # # # # # # # # # # # # # # # # # # # # # #
 
 # Replace with your dataset directory path
 ## explore_dataset(dataset_path)
@@ -207,6 +257,23 @@ dataset_path = "eel4810-dataset"
 ## analyze_correlation(dataset_path)
 
 # Replace with your dataset directory path
-find_files_with_hash(dataset_path)
+## find_files_with_hash(dataset_path)
+
+# Verify dataset integrity
+## label_issues = verify_dataset_integrity(dataset_path)
+## if label_issues:
+##     print("Files with single unique labels:")
+##     for file, labels in label_issues:
+##         print(f"{file}: {labels}")
+## else:
+##     print("No issues found with dataset integrity.")
 
 
+# Check for encoding issues
+## encoding_issues = check_encoding_issues(dataset_path)
+## if encoding_issues:
+##     print("Files with encoding issues:")
+##     for file in encoding_issues:
+##         print(file)
+## else:
+##     print("No encoding issues found.")
