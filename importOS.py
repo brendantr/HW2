@@ -1,7 +1,7 @@
 import os
 import pandas as pd # type: ignore
-import matplotlib.pyplot as plt
-import seaborn as sns
+import matplotlib.pyplot as plt # type: ignore
+import seaborn as sns # type: ignore
 
 def explore_dataset(root_dir):
     # List all directories
