@@ -1,0 +1,101 @@
+Experimental Analysis Summary
+===========================
+
+Experiment: with_normalization
+  Accuracy: 0.9534
+  F1 Score: 0.9404
+  Final Training Loss: 0.1712
+  Final Validation Loss: 0.1576
+  Runtime: 9.62 seconds
+
+Experiment: without_normalization
+  Accuracy: 0.9534
+  F1 Score: 0.9404
+  Final Training Loss: 0.1938
+  Final Validation Loss: 0.1713
+  Runtime: 9.18 seconds
+
+Experiment: batch_size_16
+  Accuracy: 0.9561
+  F1 Score: 0.9465
+  Final Training Loss: 0.1637
+  Final Validation Loss: 0.1495
+  Runtime: 16.17 seconds
+
+Experiment: batch_size_64
+  Accuracy: 0.9534
+  F1 Score: 0.9404
+  Final Training Loss: 0.1734
+  Final Validation Loss: 0.1561
+  Runtime: 5.51 seconds
+
+Experiment: learning_rate_0.0001
+  Accuracy: 0.9534
+  F1 Score: 0.9404
+  Final Training Loss: 0.1879
+  Final Validation Loss: 0.1705
+  Runtime: 8.80 seconds
+
+Experiment: learning_rate_0.01
+  Accuracy: 0.9534
+  F1 Score: 0.9426
+  Final Training Loss: 0.1656
+  Final Validation Loss: 0.1498
+  Runtime: 9.08 seconds
+
+Experiment: optimizer_sgd
+  Accuracy: 0.9534
+  F1 Score: 0.9404
+  Final Training Loss: 0.1935
+  Final Validation Loss: 0.1750
+  Runtime: 7.20 seconds
+
+Experiment: optimizer_adam
+  Accuracy: 0.9534
+  F1 Score: 0.9404
+  Final Training Loss: 0.1710
+  Final Validation Loss: 0.1526
+  Runtime: 8.83 seconds
+
+Experiment: optimizer_rmsprop
+  Accuracy: 0.9534
+  F1 Score: 0.9404
+  Final Training Loss: 0.1684
+  Final Validation Loss: 0.1535
+  Runtime: 8.10 seconds
+
+Experiment: optimizer_momentum
+  Accuracy: 0.9534
+  F1 Score: 0.9404
+  Final Training Loss: 0.2000
+  Final Validation Loss: 0.1799
+  Runtime: 7.10 seconds
+
+Experiment: init_xavier
+  Accuracy: 0.9572
+  F1 Score: 0.9466
+  Final Training Loss: 0.1649
+  Final Validation Loss: 0.1467
+  Runtime: 8.98 seconds
+
+Experiment: init_random
+  Accuracy: 0.9534
+  F1 Score: 0.9404
+  Final Training Loss: 0.1777
+  Final Validation Loss: 0.1592
+  Runtime: 8.91 seconds
+
+Experiment: with_l2_regularization
+  Accuracy: 0.9534
+  F1 Score: 0.9404
+  Final Training Loss: 0.1850
+  Final Validation Loss: 0.1649
+  Runtime: 9.14 seconds
+
+Experiment: without_l2_regularization
+  Accuracy: 0.9572
+  F1 Score: 0.9496
+  Final Training Loss: 0.1665
+  Final Validation Loss: 0.1521
+  Runtime: 9.13 seconds
+
