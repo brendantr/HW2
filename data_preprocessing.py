@@ -1,16 +1,19 @@
+# --------------------------------------------
+# data_preprocessing.py
+# --------------------------------------------
+# This module implements the data preparation requirements
+# 1. Use columns 2-4 as input features to predict the label in column 5
+# 2. Implement 90/10 train/test split for model evaluation
+# 3. Support normalization (StandardScaler) for experimental comparison
+# --------------------------------------------
+
 import os
 import glob
 import pandas as pd
 import numpy as np
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
-
-# Data Loading and Preprocessing Module for the project
-# ---------------------------
-# 1. Data Preprocessing
-# ---------------------------
-
-
+ 
 def load_and_combine_data(data_dir):
     """
     Walk through the subdirectories, read CSVs, and combine them into one DataFrame.

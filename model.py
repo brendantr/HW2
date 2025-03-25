@@ -8,7 +8,7 @@ class DeepNN(nn.Module):
         """
         Initialize the neural network.
         
-        Args:
+        Arguments:
             input_size: Number of input features
             hidden_sizes: List of sizes for hidden layers
             num_classes: Number of output classes

@@ -10,7 +10,7 @@ from utils import create_dataloaders
 from evaluate_model import evaluate_model, plot_confusion_matrix
 
 def main():
-    """Load trained model and evaluate its performance"""
+    # Load trained model and evaluate its performance
     print("Loading trained model...")
     
     # Load the checkpoint
